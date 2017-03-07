@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<widget id="Pin.widget.Pin" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+<widget id="Pin.widget.Pin" needsEntityContext="false" xmlns="http://www.mendix.com/widget/1.0/">
     <name>Pin</name>
     <description>The description of this widget.</description>
 
     <icon />
 
     <properties>
-        <property key="dummyKey" type="string" required="false" defaultValue="">
-            <caption>Dummy key</caption>
-            <category>Appearance</category>
-            <description>This key was added to make the widget work in the Modeler (needs atleast 1 key). Please change/remove this one</description>
+        <property key="selector" type="string" required="false" defaultValue="">
+            <caption>Selector</caption>
+            <category>General</category>
+            <description>The CSS selector (or Mendix name) of the element to Pin</description>
         </property>
+         <property key="selectorIsName" type="boolean" required="true" defaultValue="true">
+             <caption>Is Mx Name</caption>
+             <category>General</category>
+             <description>Is the 'Selector' value a Mendix name?</description>
+         </property>
     </properties>
 </widget>

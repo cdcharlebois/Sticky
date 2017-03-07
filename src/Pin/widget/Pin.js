@@ -15,8 +15,9 @@ define([
     "dojo/html",
     "dojo/_base/event",
     "Pin/lib/jquery-1.11.2",
+    "Pin/lib/jquery.pin",
 
-], function (declare, _WidgetBase, dom, dojoDom, dojoProp, dojoGeometry, dojoClass, dojoStyle, dojoConstruct, dojoArray, lang, dojoText, dojoHtml, dojoEvent, _jQuery) {
+], function (declare, _WidgetBase, dom, dojoDom, dojoProp, dojoGeometry, dojoClass, dojoStyle, dojoConstruct, dojoArray, lang, dojoText, dojoHtml, dojoEvent, _jQuery, Pin) {
     "use strict";
 
     var $ = _jQuery.noConflict(true);
@@ -27,6 +28,10 @@ define([
         // Internal variables.
         _handles: null,
         _contextObj: null,
+
+        //modeler
+        selector: null,
+        selectorIsName: null,
 
         constructor: function () {
             this._handles = [];
@@ -51,6 +56,15 @@ define([
           logger.debug(this.id + ".uninitialize");
         },
 
+        _initializePin: function(){
+          var sel = this.selectorIsName ? this._getSelectorFromName(this.selector) : this.selector;
+          $(sel).pin({containerSelector: '.mx-scrollcontainer-center'});
+        },
+
+        _getSelectorFromName: function(mendixName) {
+          return ".mx-name-" + mendixName;
+        },
+
         _updateRendering: function (callback) {
             logger.debug(this.id + "._updateRendering");
 
@@ -59,7 +73,7 @@ define([
             } else {
                 dojoStyle.set(this.domNode, "display", "none");
             }
-
+            this._initializePin();
             this._executeCallback(callback);
         },
 
