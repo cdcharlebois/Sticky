@@ -58,7 +58,7 @@ define([
 
         _initializePin: function(){
           var sel = this.selectorIsName ? this._getSelectorFromName(this.selector) : this.selector;
-          $(sel).pin({containerSelector: '.mx-scrollcontainer-center'});
+          $(sel).pin();
         },
 
         _getSelectorFromName: function(mendixName) {

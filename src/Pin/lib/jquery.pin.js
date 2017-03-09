@@ -49,8 +49,8 @@
         var onScroll = function () {
             if (disabled) { return; }
 
-            // scrollY = $window.scrollTop();
-            scrollY = document.querySelector('.mx-scrollcontainer-center > div > div').getBoundingClientRect().top * -1;
+            scrollY = $window.scrollTop();
+            // scrollY = document.querySelector('.mx-scrollcontainer-center > div > div').getBoundingClientRect().top * -1;
 
             var elmts = [];
             for (var i=0, len=elements.length; i<len; i++) {
@@ -105,7 +105,7 @@
         });
 
         $window.scroll(onScroll);
-        setInterval(onScroll, 100);
+        // setInterval(onScroll, 100);
         $window.resize(function () { recalculateLimits(); });
         recalculateLimits();
 
