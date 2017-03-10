@@ -106,7 +106,6 @@
         });
 
         $window.scroll(onScroll);
-        // setInterval(onScroll, 100);
         $window.resize(function () { recalculateLimits(); });
         recalculateLimits();
 

@@ -32,6 +32,9 @@ define([
         //modeler
         selector: null,
         selectorIsName: null,
+        topPadding: null,
+        bottomPadding: null,
+        activeClass: null,
 
         constructor: function() {
             this._handles = [];
@@ -58,7 +61,14 @@ define([
 
         _initializePin: function() {
             var sel = this.selectorIsName ? this._getSelectorFromName(this.selector) : this.selector;
-            $(sel).pin({containerSelector: '.mx-scrollcontainer'});
+            $(sel).pin({
+              containerSelector: '.mx-scrollcontainer',
+              padding: {
+                top: this.topPadding ? this.topPadding : null,
+                bottom: this.bottomPadding ? this.bottomPadding : null,
+              },
+              activeClass: this.activeClass ? this.activeClass : null
+            });
             // $(sel).pin();
         },
 
