@@ -7,7 +7,7 @@ Widget allows you to pin an element to your page, so it sticks to the top of the
 ### Installation
 
 1. Install the widget in your project
-2. Include the widget on a page where you want to show a tour
+2. Include the widget on a page where you want to pin something
 3. Configure the widget's settings:
     1. On the **General** tab, Configure:
         1. `Selector` : set to the CSS selector or Mendix name of the element to Pin
