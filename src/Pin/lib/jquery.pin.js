@@ -35,7 +35,8 @@
 
                 $this.data("pin", {
                     pad: pad,
-                    from: (options.containerSelector ? containerOffset.top : offset.top) - pad.top,
+                    // from: (options.containerSelector ? containerOffset.top : offset.top) - pad.top,
+                    from: (options.containerSelector ? containerOffset.top + parentOffset.top : offset.top) - pad.top,
                     to: containerOffset.top + $container.height() - $this.outerHeight() - pad.bottom,
                     end: containerOffset.top + $container.height(),
                     parentTop: parentOffset.top
