@@ -60,14 +60,23 @@ define([
         },
 
         _initializePin: function() {
-            var sel = this.selectorIsName ? this._getSelectorFromName(this.selector) : this.selector;
-            $(sel).pin({
-              containerSelector: '.mx-scrollcontainer',
-              padding: {
-                top: this.topPadding ? this.topPadding : null,
-                bottom: this.bottomPadding ? this.bottomPadding : null,
-              },
-              activeClass: this.activeClass ? this.activeClass : null
+            var sel = this.selectorIsName ? this._getSelectorFromName(this.selector) : this.selector
+            ,   el = this.domNode.parentElement.querySelector(sel);
+            var wait = setInterval(function() {
+              if ($(el).closest('.mx-scrollcontainer')) {
+                act();
+                clearInterval(wait);
+              }
+            }, 100);
+            var act = lang.hitch(this,function(){
+              $(el).pin({
+                containerSelector: '.mx-scrollcontainer',
+                padding: {
+                  top: this.topPadding ? this.topPadding : null,
+                  bottom: this.bottomPadding ? this.bottomPadding : null,
+                },
+                activeClass: this.activeClass ? this.activeClass : null
+              });
             });
             // $(sel).pin();
         },
