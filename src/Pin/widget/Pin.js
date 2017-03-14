@@ -63,7 +63,7 @@ define([
             var sel = this.selectorIsName ? this._getSelectorFromName(this.selector) : this.selector
             ,   el = this.domNode.parentElement.querySelector(sel);
             var wait = setInterval(function() {
-              if ($(el).closest('.mx-scrollcontainer')) {
+              if ($(el).closest('.mx-scrollcontainer').length > 0) {
                 act();
                 clearInterval(wait);
               }
