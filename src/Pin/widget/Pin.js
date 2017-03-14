@@ -72,11 +72,12 @@ define([
               $(el).pin({
                 containerSelector: '.mx-scrollcontainer',
                 padding: {
-                  top: this.topPadding ? this.topPadding : null,
-                  bottom: this.bottomPadding ? this.bottomPadding : null,
+                  top: this.topPadding,
+                  bottom: this.bottomPadding,
                 },
                 activeClass: this.activeClass ? this.activeClass : null
               });
+              $(el).css('z-index', '99999');
             });
             // $(sel).pin();
         },
