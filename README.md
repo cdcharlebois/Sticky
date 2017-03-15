@@ -20,7 +20,6 @@ Widget allows you to pin an element to your page, so it sticks to the top of the
 
 ### Video
 [View here](https://www.useloom.com/embed/16b42e90dab94dc1b7635ff543d0eb65)
-<iframe width="undefined" height="undefined" src="https://www.useloom.com/embed/16b42e90dab94dc1b7635ff543d0eb65" frameborder="0" allowfullscreen></iframe>
 
 ### Typical usage scenario
 
