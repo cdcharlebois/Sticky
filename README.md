@@ -18,6 +18,10 @@ Widget allows you to pin an element to your page, so it sticks to the top of the
         2. `Bottom Padding` : Extra padding to add to the bottom of the element while pinned
         3. `Active Class` : Set a class on the element when pinned
 
+### Video
+
+<iframe width="undefined" height="undefined" src="https://www.useloom.com/embed/16b42e90dab94dc1b7635ff543d0eb65" frameborder="0" allowfullscreen></iframe>
+
 ### Typical usage scenario
 
 Useful for if you want to always show a helpful hint or column headers on a table, etc
@@ -25,6 +29,7 @@ Useful for if you want to always show a helpful hint or column headers on a tabl
 ### Known Limitations
 
 - the page layout must be a scroll container set to **Full Widget** scroll behavior, otherwise the widget will do nothing :sob:
+- the widget must be placed as a sibling of the element to pin
 
 ###### Based on the Mendix Widget Boilerplate
 
